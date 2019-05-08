@@ -24,19 +24,43 @@
     <dependencySet>
       <useProjectArtifact>false</useProjectArtifact>
       <outputDirectory>elasticsearch-bulk-insert-plugin/lib</outputDirectory>
-      <scope>runtime</scope>
+      <!-- <scope>runtime</scope>-->
       <useTransitiveDependencies>true</useTransitiveDependencies>
       <includes>
-        <include>com.wcohen:com.wcohen.secondstring:jar</include>
+	  
+	    <include>com.wcohen:com.wcohen.secondstring:jar</include>
         <include>commons-cli:commons-cli:jar</include>
         <include>com.ning:compress-lzf:jar</include>
         <include>org.elasticsearch:elasticsearch:jar</include>
+		<include>org.elasticsearch.client:transport:jar</include>
+		<include>org.elasticsearch:elasticsearch-core:jar</include>
+		<include>org.elasticsearch:elasticsearch-cli:jar</include>
+		<include>org.elasticsearch:elasticsearch-secure-sm:jar</include>
+		<include>org.elasticsearch.plugin:transport-netty3-client:jar</include>
+		<include>org.elasticsearch.plugin:transport-netty4-client:jar</include>
+		<include>org.elasticsearch.plugin:reindex-client:jar</include>
+		<include>org.elasticsearch.plugin:percolator-client:jar</include>	
+		<include>org.elasticsearch.plugin:lang-mustache-client:jar</include>
+		<include>org.elasticsearch.client:x-pack-transport:jar</include>
+		<include>org.elasticsearch.plugin:x-pack-api:jar</include>
+		<include>org.elasticsearch:elasticsearch-x-content:jar</include>
+		<include>org.elasticsearch.plugin:parent-join-client:jar</include>
+		<include>org.elasticsearch.plugin:x-pack-core:jar</include>
+		<include>com.unboundid:unboundid-ldapsdk:jar</include>
+		<include>org.bouncycastle:bcprov-jdk15on:jar</include>
+		<include>org.bouncycastle:bcpkix-jdk15on:jar</include>
+		<include>com.sun.mail:javax.mail:jar</include>
+		<include>javax.activation:activation:jar</include>
+		<include>org.elasticsearch.client:sniffer:jar</include>
+		<include>org.apache.httpcomponents:httpasyncclient:jar</include>
+		<include>io.netty:netty-all:jar</include>		
         <include>com.google.guava:guava:jar</include>
         <include>org.hdrhistogram:HdrHistogram:jar</include>
         <include>com.carrotsearch:hppc:jar</include>
         <include>com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:jar</include>
         <include>com.fasterxml.jackson.dataformat:jackson-dataformat-smile:jar</include>
         <include>com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:jar</include>
+		<include>org.apache.logging.log4j:log4j-api:jar</include>		
         <include>org.joda:joda-convert:jar</include>
         <include>joda-time:joda-time:jar</include>
         <include>com.twitter:jsr166e:jar</include>

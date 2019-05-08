@@ -32,7 +32,7 @@ import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang.StringUtils;
-import org.elasticsearch.common.transport.InetSocketTransportAddress;
+import org.elasticsearch.common.transport.TransportAddress;
 import org.pentaho.di.core.CheckResult;
 import org.pentaho.di.core.CheckResultInterface;
 import org.pentaho.di.core.Const;
@@ -785,8 +785,8 @@ public class ElasticSearchBulkMeta extends BaseStepMeta implements StepMetaInter
     @Injection( name = "PORT" )
     public int port;
 
-    public InetSocketTransportAddress getAddr() throws UnknownHostException {
-      return new InetSocketTransportAddress( InetAddress.getByName( address ), port );
+    public TransportAddress getAddr() throws UnknownHostException {
+      return new TransportAddress( InetAddress.getByName( address ), port );
     }
   }
 
