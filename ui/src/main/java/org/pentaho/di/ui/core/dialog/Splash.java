@@ -188,6 +188,7 @@ public class Splash {
         e.gc.drawText( licenseText, 290, 275, true );
 
         String version =  buildVersion;
+        String revision = BuildVersion.getInstance().getRevision();
         // If this is a Milestone or RC release, warn the user
         if ( Const.RELEASE.equals( Const.ReleaseType.MILESTONE ) ) {
           version = BaseMessages.getString( PKG, "SplashDialog.DeveloperRelease" ) + " - " + version;
@@ -197,13 +198,14 @@ public class Splash {
         } else if ( Const.RELEASE.equals( Const.ReleaseType.PREVIEW ) ) {
           version = BaseMessages.getString( PKG, "SplashDialog.PreviewRelease" ) + " - " + version;
         } else if ( Const.RELEASE.equals( Const.ReleaseType.GA ) ) {
-          version = BaseMessages.getString( PKG, "SplashDialog.GA" ) + " - " + version;
+          version = BaseMessages.getString( PKG, "SplashDialog.GA" ) + " - " + version; //+ " | " + "Revision" +" - " + revision
         }
         String buildDate = BaseMessages.getString( PKG, "SplashDialog.BuildDate" ) + " " + outputStringDate;
         // use the same font/size as the license text
         e.gc.setForeground( new Color( display, 65, 65, 65 ) );
         e.gc.drawText( version, 290, 235, true );
-        e.gc.drawText( buildDate, 290, 250, true );
+        e.gc.drawText( "Revision" +" - " + revision, 290, 245, true );
+        e.gc.drawText( buildDate, 290, 255, true );
       }
     } );
 

@@ -890,7 +890,6 @@ public class ElasticSearchBulkDialog extends BaseStepDialog implements StepDialo
 	@SuppressWarnings("resource")
 	private void test(TestType testType) {
 
-		logBasic("****************************************************");
 		// Save off the thread's context class loader to restore after the test
 		ClassLoader originalClassloader = Thread.currentThread().getContextClassLoader();
 

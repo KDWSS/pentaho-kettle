@@ -77,7 +77,8 @@ public class BuildVersion {
     Manifest manifest = manifestGetter.getManifest();
 
     version = manifest.getMainAttributes().getValue( Attributes.Name.IMPLEMENTATION_VERSION );
-    revision = manifest.getMainAttributes().getValue( Attributes.Name.SPECIFICATION_VERSION );
+    revision = environmentVariableGetter.getEnvVarible( "KETTLE_BUILD_REVISION" );
+    //revision = manifest.getMainAttributes().getValue( Attributes.Name.SPECIFICATION_VERSION );
     buildDate = manifest.getMainAttributes().getValue( "Compile-Timestamp" );
     buildUser = manifest.getMainAttributes().getValue( "Compile-User" );
     if ( version == null ) {

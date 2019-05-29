@@ -109,7 +109,8 @@ public class ElasticSearchBulk extends BaseStep implements StepInterface {
 	private Map<String, String> columnsToJson;
 	private boolean hasFields;
 
-	private IndexRequest.OpType opType = OpType.CREATE;
+	//private IndexRequest.OpType opType = OpType.CREATE;
+	private IndexRequest.OpType opType = OpType.INDEX;
 
 	public ElasticSearchBulk(StepMeta stepMeta, StepDataInterface stepDataInterface, int copyNr, TransMeta transMeta,
 			Trans trans) {
@@ -334,7 +335,7 @@ public class ElasticSearchBulk extends BaseStep implements StepInterface {
 		this.hasFields = columnsToJson.size() > 0;
 
 		this.opType = StringUtils.isNotBlank(meta.getIdInField()) && meta.isOverWriteIfSameId() ? OpType.INDEX
-				: OpType.CREATE;
+				: OpType.INDEX;
 
 	}
 
@@ -477,8 +478,6 @@ public class ElasticSearchBulk extends BaseStep implements StepInterface {
 
 	private void initClient() throws Exception {
 		
-		logBasic("****************************************************");
-		
 		logBasic(meta.getSettingsMap() + "");
 		
 		TransportClient tClientBuilder = null;
@@ -521,7 +520,6 @@ public class ElasticSearchBulk extends BaseStep implements StepInterface {
 			node.start();
 		}
 		
-		logBasic("****************************************************");
 	}
 
 	private void disposeClient() {
