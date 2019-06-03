@@ -204,7 +204,7 @@ public class Splash {
         // use the same font/size as the license text
         e.gc.setForeground( new Color( display, 65, 65, 65 ) );
         e.gc.drawText( version, 290, 235, true );
-        e.gc.drawText( "Revision" +" - " + revision, 290, 245, true );
+        e.gc.drawText( "MCube Revision" +" - " + revision, 290, 245, true );
         e.gc.drawText( buildDate, 290, 255, true );
       }
     } );
